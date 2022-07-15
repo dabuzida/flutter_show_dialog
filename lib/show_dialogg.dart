@@ -146,25 +146,44 @@ class _ShowDialoggState extends State<ShowDialogg> {
           title: const Text('아이스크림 선택하기'),
           children: <Widget>[
             SimpleDialogOption(
-              child: Text('스크류 바'),
+              child: Container(
+                decoration: BoxDecoration(border: Border.all(color: Colors.blue, width: 1)),
+                child: Text('스크류 바'),
+              ),
               onPressed: () {
                 print(1);
                 Navigator.pop(context, '스크류 바');
               },
             ),
-            SimpleDialogOption(
-              child: Text('메로나'),
-              onPressed: () {
-                print(2);
-                Navigator.pop(context, '메로나');
-              },
+            Container(
+              decoration: BoxDecoration(border: Border.all(color: Colors.pink, width: 1)),
+              child: SimpleDialogOption(
+                child: Text('메로나'),
+                onPressed: () {
+                  print(2);
+                  Navigator.pop(context, '메로나');
+                },
+              ),
             ),
-            SimpleDialogOption(
-              child: Text('요맘떼'),
-              onPressed: () {
-                print(3);
-                Navigator.pop(context, '요맘떼');
-              },
+            Container(
+              width: 100,
+              height: 900,
+              color: Colors.teal,
+              alignment: Alignment.center,
+              child: Text(
+                '스크롤도 가능',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(border: Border.all(color: Colors.red[900]!, width: 10)),
+              child: SimpleDialogOption(
+                child: Text('요맘떼'),
+                onPressed: () {
+                  print(3);
+                  Navigator.pop(context, '요맘떼');
+                },
+              ),
             ),
           ],
         );
@@ -179,7 +198,7 @@ class _ShowDialoggState extends State<ShowDialogg> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('20년 장기계약'),
-          content: const Text('계약을 파기할 수 없습니다'),
+          content: const Text('계약을 파기할 수 없습니다\n\n스크롤은 안됨'),
           actions: <Widget>[
             TextButton(
               onPressed: () => Navigator.pop(context, 'OK'),

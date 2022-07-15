@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_show_dialog/alert_dialogg.dart';
 import 'package:flutter_show_dialog/show_dialogg.dart';
 
 void main() {
